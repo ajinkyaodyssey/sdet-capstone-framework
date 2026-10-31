@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+.venv/
+venv/
+
+# Test Arifacts
+.pytest_cache/
+reports/*.html
+reports/screenshots/*.png
+!reports/.gitkeep
+!reports/screenshots/.gitkeep
+
+# Auth state files - contains session tokens
+auth_state*.json
+*_auth.json
+
+# Editor
+.vscode/settings.json
+.idea
+*.swp
