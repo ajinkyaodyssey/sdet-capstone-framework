@@ -7,6 +7,8 @@ import pytest
 from config.config import ui_config
 from tests.ui.pages.inventory_page import InventoryPage
 from tests.ui.pages.login_page import LoginPage
+from tests.ui.pages.cart_page import CartPage
+from tests.ui.pages.checkout_page import CheckoutPage
 
 log = logging.getLogger(__name__)
 
@@ -45,6 +47,16 @@ def login_page(page):
 @pytest.fixture
 def inventory_page(logged_in_page):
     return InventoryPage(logged_in_page, ui_config.BASE_URL).navigate().expect_loaded()
+
+
+@pytest.fixture
+def cart_page(logged_in_page):
+    return CartPage(logged_in_page, ui_config.BASE_URL).navigate().expect_loaded()
+
+
+@pytest.fixture
+def checkout_page(logged_in_page):
+    return CartPage(logged_in_page, ui_config.BASE_URL).navigate().expect_loaded()
 
 
 @pytest.hookimpl(hookwrapper=True)
